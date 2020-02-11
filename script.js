@@ -4,26 +4,43 @@ var generateBtn = document.querySelector("#generate");
 // my variables
 var lowerCase =  "abcdefghijklmnopqrstuvwxyz";
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numbers = "0123456789";
+var numberOptions = "0123456789";
 var specialCharacter = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
 var passwordMin = 8;
 var passwordMax = 120;
-var userPassword;
+
 var passwordLength;
-var passwordCharSet;
-var pass = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]:;?><,./-=";
-
-
 
 
 
 // Write password to the #password input
 function writePassword() {
-  //var passwordLength = "";
-  var passwordCharSet = "";
-  var userPassword = "";
 
-  var password = generatePassword(lowerCase, upperCase, numbers, specialCharacter);
+  userInput = prompt(passwordLength);
+
+  for (var i = 0; i < passwordLength.length; i++) {
+    if (userInput.lowerCase) {
+      password += lowerCase;
+      
+    } else if (userInput.upperCase) {
+      password += upperCase;
+      
+    }else if (userInput.specialCharacter) {
+      password += specialCharacter;
+      
+    }else if (userInput.numberOptions) {
+      password += numberOptions;
+      
+    }
+    else{
+      "This is not a valid password"
+    }
+    
+  }
+
+  var password = generatePassword(lowerCase, upperCase, numbers, specialCharacter)
+    
+
 
   var passwordText = document.querySelector("#password");
 
