@@ -10,16 +10,17 @@ var passwordMin = 8;
 var passwordMax = 120;
 
 var passwordLength;
+var doesUserWantLowerCase = confirm("Do you want lower case?");
 
 
 
 // Write password to the #password input
 function writePassword() {
 
-  userInput = prompt(passwordLength);
+  passwordLength = prompt("Please provide password lenght");
 
-  for (var i = 0; i < passwordLength.length; i++) {
-    if (userInput.lowerCase) {
+  for (var i = 0; i < passwordLength; i++) {
+    if (doesUserWantLowerCase) {
       password += lowerCase;
       
     } else if (userInput.upperCase) {
@@ -38,7 +39,7 @@ function writePassword() {
     
   }
 
-  var password = generatePassword(lowerCase, upperCase, numbers, specialCharacter)
+  var password = generatePassword()
     
 
 
@@ -48,23 +49,23 @@ function writePassword() {
 
 
   
-if (lowerCase) {
-  password += lowerCase;
-}
-if (upperCase) {
-  password += upperCase;
-}
-if (numbers) {
-  password += numbers;
-}
-if (specialCharacter) {
-  password += specialCharacter;
-}
-//passwordLength = Number(passwordText.value);
-for (var i = 0; i < password.length; i++) {
-  password += password;
+// if (lowerCase) {
+//   password += lowerCase;
+// }
+// if (upperCase) {
+//   password += upperCase;
+// }
+// if (numbers) {
+//   password += numbers;
+// }
+// if (specialCharacter) {
+//   password += specialCharacter;
+// }
+// //passwordLength = Number(passwordText.value);
+// for (var i = 0; i < password.length; i++) {
+//   password += password;
   
-}
+// }
 
 }
 // for (let i = 0; i < password.length; i++) {
@@ -86,11 +87,11 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-//copied from internet
-function generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols) {
-  let charCodes = LOWERCASE_CHAR_CODES
-  if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES)
-  if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODES)
-  if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES)
-//delete the closing curly bracket
-}
+// //copied from internet
+// function generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols) {
+//   let charCodes = LOWERCASE_CHAR_CODES
+//   if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES)
+//   if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODES)
+//   if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES)
+// //delete the closing curly bracket
+// }
